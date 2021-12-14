@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 #include <QNetworkAccessManager>
+#include <QLineSeries>
+#include <QValueAxis>
+#include <QtCharts>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -27,9 +30,15 @@ private:
 
 private:
     void getWeather();
+    void createChart(QString hightemp[],QString lowtemp[]);
+
     QString getCityKey(QString city_name);
     void replyFinished(QNetworkReply *reply);
     void analyWeatherXML(QByteArray json);
+
+    QCategoryAxis *axisX1;
+    QCategoryAxis *axisX2;
+    QValueAxis *axisY;
 
 
 };
