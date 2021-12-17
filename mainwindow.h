@@ -25,12 +25,15 @@ public:
 
 
 
+private slots:
+    void on_btnSearch_clicked();
+
 private:
     Ui::MainWindow *ui;
 
 private:
     void getWeather();
-    void createChart(QString hightemp[],QString lowtemp[]);
+    void createChart(QString hightemp[],QString lowtemp[],QString date[],QString weeks[]);
 
     QString getCityKey(QString city_name);
     void replyFinished(QNetworkReply *reply);
